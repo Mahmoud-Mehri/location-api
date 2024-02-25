@@ -5,7 +5,7 @@
 1. Option 1:
 
    1. Run `npm install` to install Node packages
-   2. Set Port number and PostgreSQL settings on `src/config.js` file
+   2. Set Port number and PostgreSQL settings on `src/config.ts` file
    3. Run `npm run dev` to run server
 
 2. Option 2:

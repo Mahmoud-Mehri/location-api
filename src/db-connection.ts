@@ -1,5 +1,5 @@
 import { Sequelize } from "sequelize";
-import config from "./config.js";
+import config from "./config";
 
 export const sqlConnection = new Sequelize(
   "locationdb",

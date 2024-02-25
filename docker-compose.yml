@@ -12,6 +12,8 @@ services:
     hostname: psql-host
     image: postgres:alpine
     restart: always
+    healthcheck:
+      test: pg_isready -U testuser
     environment:
       - POSTGRES_USER=testuser
       - POSTGRES_PASSWORD=testpass
@@ -23,7 +25,9 @@ services:
 
   location-api:
     depends_on:
-      - psql
+      psql:
+        condition: service_healthy
+        restart: true
     container_name: c-api
     build:
       context: .

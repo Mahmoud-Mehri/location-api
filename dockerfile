@@ -9,6 +9,8 @@ RUN npm install
 
 COPY . .
 
+COPY .env /usr/location-app/
+
 RUN npm run build
 
 FROM node:18.17.0 as production
@@ -22,6 +24,8 @@ COPY package*.json .
 
 RUN npm install --omit=dev
 
+COPY --from=build /usr/location-app/.env ./
+
 COPY --from=build /usr/location-app/dist ./dist
 
-CMD ["node", "./dist/index.js"]
+CMD ["node", "./dist/app.js"]
