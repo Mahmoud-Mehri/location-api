@@ -1,0 +1,14 @@
+import { Sequelize } from "sequelize";
+import config from "./config.js";
+
+export const sqlConnection = new Sequelize(
+  "locationdb",
+  "testuser",
+  "testpass",
+  {
+    dialect: "postgres",
+    host: config.postgres.host,
+    port: config.postgres.port,
+    logging: config.postgres.logging,
+  }
+);

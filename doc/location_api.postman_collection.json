@@ -1,0 +1,281 @@
+{
+	"info": {
+		"_postman_id": "918e53dd-ad3a-41a9-a8d7-93a56c6fcf31",
+		"name": "Location API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27170088"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"mahmoud.mehri90@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Location List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4001/api/locations?page=2&page_size=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "page_size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Location List By Category",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4001/api/locations?category=testcat&page=2&page_size=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "testcat"
+						},
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "page_size",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Location By ID",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4001/api/locations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Location",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test location 5\",\r\n    \"category\": \"testcat\",\r\n    \"description\": \"test description\",\r\n    \"latitude\": 124.656,\r\n    \"longitude\": 3456.656,\r\n    \"rating\": 4.6,\r\n    \"reviewCount\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/locations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Location",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"test location one\",\r\n    \"category\": \"testcat2\",\r\n    \"description\": \"test description updated\",\r\n    \"latitude\": 124.656,\r\n    \"longitude\": 3456.656,\r\n    \"rating\": 4.6,\r\n    \"reviewCount\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/locations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Locations by Category",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Updated\",\r\n    \"category\": \"testcat\",\r\n    \"description\": \"test description\",\r\n    \"latitude\": 124.656,\r\n    \"longitude\": 23,\r\n    \"rating\": 4,\r\n    \"reviewCount\": 6\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4001/api/locations?category=testcat",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "testcat"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Location",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNzA4ODc5Njg1LCJleHAiOjE3MDg5MjI4ODV9.SgvjelNChvHXPycTtEzsc_iyZIEX5VkbfDH-8jyuR5g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:4001/api/locations/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4001",
+					"path": [
+						"api",
+						"locations",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
